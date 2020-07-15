@@ -128,7 +128,7 @@ export default class SearchInput extends Component {
 
     return (
       <View style={style} pointerEvents={pointerEvents}>
-        <View style={styles.container} onLayout={e => this.onContainerLayout(e)}>
+        <View style={[styles.container, this.props.containerStyle]} onLayout={e => this.onContainerLayout(e)}>
           <View style={this.state.editing || value ? {width: this.state.width} : null}>
             <View style={styles.placeholderContainer} onLayout={e => this.onPlaceholderLayout(e)}>
               <View style={{paddingLeft: iconSize * 0.5, alignItems: 'center'}}>
@@ -169,7 +169,7 @@ const styles = StyleSheet.create({
     bottom: 0,
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
+    //justifyContent: 'center',
   },
   placeholderContainer: {
     flexDirection: 'row',
